@@ -1,3 +1,13 @@
+@charset "UTF-8";
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: "zocial", sans-serif;
+  font-size: 5em;
+  color: white;
+}
+
 body,
 div,
 ul,
@@ -14,6 +24,14 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+#projects {
+  display: none;
+}
+
+#education {
+  display: none;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -26,7 +44,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #ba9077;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +52,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #ba9077;
   line-height: 29px;
   padding: 10px;
 }
@@ -100,16 +118,17 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #ba9077;
   display: none;
+  padding-top: 20px;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #bcd5d1;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #ba9077;
 }
 
 .white-text {
@@ -117,19 +136,13 @@ a {
   color: #fff;
 }
 
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
-}
-
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #5a5c51;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #5a5c51;
 }
 
 .flex-box {
@@ -152,6 +165,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
+  padding-top: 5px;
   width: 200px;
   display: none;
 }

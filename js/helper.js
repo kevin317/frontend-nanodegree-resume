@@ -13,7 +13,7 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span class="white-text">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -40,7 +40,8 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img class="img-responsive" src="%data%">';
+var HTMLprojectImageBox = '<div class="flex-box imagebox"></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -55,10 +56,47 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLfooterFacebook = '<li><a class="zocial-facebook" href="%data%" target="_blank"></a></li>'
+var HTMLfooterLinkedin = '<li><a class="zocial-linkedin" href="%data%" target="_blank"></a></li>'
+var HTMLfooterGmail = '<li><a class="zocial-gmail" href="%data%"></a></li>'
+var HTMLfooterGit = '<li><a class="zocial-github" href="%data%" target="_blank"></a></li>'
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+/*
+show content when click on navbar and change class status
+*/
+$(document).ready(function() {
+$( ".nav" ).children().click(function() {
+   $(".nav").find(".active").removeClass("active");
+   $(this).addClass("active");
+});
+});
 
+$(document).ready(function() {
+$( "#nav-projects" ).click(function() {
+  $("#projects").css("display","block");
+  $("#workExperience").css("display","none");
+  $("#education").css("display","none");
+});
+});
+
+$(document).ready(function() {
+$( "#nav-work" ).click(function() {
+  $("#projects").css("display","none");
+  $("#workExperience").css("display","block");
+  $("#education").css("display","none");
+});
+});
+
+$(document).ready(function() {
+$( "#nav-school" ).click(function() {
+  $("#projects").css("display","none");
+  $("#workExperience").css("display","none");
+  $("#education").css("display","block");
+});
+});
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
@@ -180,6 +218,7 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(map,marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -249,3 +288,5 @@ window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
 map.fitBounds(mapBounds);
 });
+
+
